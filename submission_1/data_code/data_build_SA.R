@@ -6,7 +6,7 @@ library(tidyverse)
 library(readr)
 
 ## Initialize an empty data frame to hold the year's data
-service.year <- NULL # nolint
+service_year <- NULL # nolint
 
 # Define the file path for the specific month and year
 ma_path <- "data/input/MA_Cnty_SA_2015_01.csv"
@@ -33,6 +33,7 @@ service_area <- read_csv(
   ),
   na = "*"
 )
+problems(service_area)
 
 # Add month and year columns
 service_area <- service_area %>%
