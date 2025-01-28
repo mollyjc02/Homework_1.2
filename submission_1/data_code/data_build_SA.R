@@ -1,3 +1,9 @@
+install.packages("readr")
+install.packages("dplyr")
+install.packages("tidyverse")
+
+library(tidyverse)
+library(readr)
 
 ## Initialize an empty data frame to hold the year's data
 service.year <- NULL # nolint
