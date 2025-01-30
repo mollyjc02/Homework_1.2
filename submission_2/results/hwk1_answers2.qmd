@@ -1,0 +1,71 @@
+--- 
+title: "Homework 1" 
+subtitle: "Econ 470"
+author: "Molly Catlin" 
+format: 
+pdf: 
+    output-file: "catlinmolly_hwk1_2"
+    output-ext: "pdf" 
+    header-includes:
+        - \usepackage{float}
+        - \floatplacement{table}{H}
+---
+
+```{r}
+#| include: false 
+#| eval: true 
+
+load("submission_2/results/hwk1_workspace.Rdata") 
+```
+
+\newpage 
+# Building the Data 
+
+\noindent 1. Provide a table of the count of plans under each plan type in each year.<br>
+
+See @tbl-plans. 
+
+```{r} 
+#| echo: false 
+#| label: tbl_plans 
+#| tbl_cap: All Plan Types (2015) 
+
+options(knitr_kable_NA=0)
+knitr::kable(plan_type_year1, 
+            col_names=c("Plan Type", "Count"), 
+            format_args=list(big_mark=","), 
+            booktabs = TRUE)
+```
+
+\newpage 
+
+\noindent 2. Remove all special needs plans (SNP), employer group plans (eghp), and all "800-series" plans. Provide an updated table after implementing these exclusions. 
+
+I remove the relevant plans just by applying the relevant filter to the full ma data and then creating the table of plan types. Counts of different plan types with these exclusions are presented in @tbl-plans2.
+
+```{r} 
+#| echo: false
+#| label: tbl-plans2
+#| tbl-cap: Revised plan types in 2015
+
+options(knitr.kable.NA = 0)
+knitr::kable(plan_type_year2, 
+             col_names=c("Plan Type","Count"),
+             format_args=list(big.mark=","), booktabs = TRUE)
+```
+
+\newpage 
+\noindent 3> Provide a table of the average enrollments for each plan type in 2015. 
+
+To do this, I need to collapse the data to the plan-type level and form the average enrollments across all counties in which that plan type operates. The resulting table is presented in @tbl-enroll.
+
+```{r}
+#| echo: false
+#| label: tbl-enroll
+#| tbl-cap: Enrollments by plan type in 2015
+
+options(knitr.kable.NA = 0)
+knitr::kable(plan_type_enroll, digits=0,
+             col_names=c("Plan Type","Count","Avg Enrollments"),
+             format_args=list(big.mark=","), booktabs = TRUE)
+``` 
