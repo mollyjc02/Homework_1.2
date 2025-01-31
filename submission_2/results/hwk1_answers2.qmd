@@ -66,7 +66,7 @@ knitr::kable(plan_type_year2,
 ```
 
 \newpage 
-\noindent 3> Provide a table of the average enrollments for each plan type in 2015. 
+\noindent 3. Provide a table of the average enrollments for each plan type in 2015. 
 
 To do this, I need to collapse the data to the plan-type level and form the average enrollments across all counties in which that plan type operates. The resulting table is presented in @tbl-enroll.
 

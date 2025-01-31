@@ -33,17 +33,17 @@ contract_info <- contract_info %>%
 # Read enrollment information for 2015
 enroll_info <- read_csv(enrollment_path,
                         skip = 1,
-                        col_names = c("contractid", "planid", "ssa",
-                                      "fips", "state", "county", "enrollment"),
+                        col_names = c("contractid", "planid", "ssa","fips", 
+                                      "state", "county", "enrollment"),
                         col_types = cols(
-                          contractid = col_character(),
-                          planid = col_double(),
-                          ssa = col_double(), 
-                          fips = col_double(),
-                          state = col_character(),
-                          county = col_character(),
-                          enrollment = col_double()
-                          ), na = "*")
+                        contractid = col_character(),
+                        planid = col_double(),
+                        ssa = col_double(),
+                        fips = col_double(),
+                        state = col_character(),
+                        county = col_character(),
+                        enrollment = col_double()
+                        ),na="*")
 
 # Merge contract info with enrollment info
 plan_data <- contract_info %>%
