@@ -5,11 +5,9 @@ enrollment_path <- "data/input/CPSC_Enrollment_Info_2015_01.csv"
 # Read contract information for 2015
 contract_info <- read_csv(contract_path,
                           skip = 1,
-                          col_names = c("contractid", "planid",
-                                        "org_type", "plan_type", "partd", "snp",
-                                        "eghp", "org_name",
-                                        "org_marketing_name", "plan_name",
-                                        "parent_org", "contract_date"),
+                          col_names = c("contractid","planid","org_type","plan_type",
+                                       "partd","snp","eghp","org_name","org_marketing_name",
+                                       "plan_name","parent_org","contract_date"),
                           col_types = cols(
                             contractid = col_character(),
                             planid = col_double(),
@@ -40,13 +38,12 @@ enroll_info <- read_csv(enrollment_path,
                         col_types = cols(
                           contractid = col_character(),
                           planid = col_double(),
-                           ssa = col_double(), 
-                           fips = col_double(),
-                           state = col_character(),
-                           county = col_character(),
-                           enrollment = col_double()
-                          ),
-                        na = "*")
+                          ssa = col_double(), 
+                          fips = col_double(),
+                          state = col_character(),
+                          county = col_character(),
+                          enrollment = col_double()
+                          ), na = "*")
 
 # Merge contract info with enrollment info
 plan_data <- contract_info %>%

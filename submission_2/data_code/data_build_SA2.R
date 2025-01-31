@@ -2,8 +2,6 @@ install.packages("readr")
 install.packages("dplyr")
 install.packages("tidyverse")
 
-library(tidyverse)
-library(readr)
 
 # Define the file path for the specific month and year
 ma_path <- "data/input/MA_Cnty_SA_2015_01.csv"
@@ -24,7 +22,7 @@ service_area <- read_csv(ma_path,
                         fips = col_double(),
                         county = col_character(),
                         notes = col_character()
-                        ),na = "*")
+                        ), na = "*")
 
 # Add month and year columns
 service_area <- service_area %>%
