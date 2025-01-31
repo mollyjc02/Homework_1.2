@@ -32,9 +32,7 @@ load("C:/Users/Molly/OneDrive - Emory University/Documents/GitHub/Homework_1.2/s
 \newpage 
 # Building the Data 
 
-\noindent 1. Provide a table of the count of plans under each plan type in each year.<br>
-
-See @tbl-plans.
+\noindent 1. Provide a table of the count of plans under each plan type in each year. See @tbl-plans.
 
 ```{r} 
 #| echo: false 
