@@ -1,14 +1,13 @@
 --- 
 title: "Homework 1" 
 subtitle: "Econ 470"
-author: "Molly Catlin" 
-format: 
-pdf: 
-    output-file: "catlinmolly_hwk1_2"
-    output-ext: "pdf" 
+format:
+  pdf:
+    output-file: "mccarthy-i-hwk1-1"
+    output-ext:  "pdf"
     header-includes:
-        - \usepackage{float}
-        - \floatplacement{table}{H}
+      - \usepackage{float}
+      - \floatplacement{table}{H}
 ---
 
 ```{r}
