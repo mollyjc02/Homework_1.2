@@ -34,11 +34,11 @@ load("C:/Users/Molly/OneDrive - Emory University/Documents/GitHub/Homework_1.2/s
 
 \noindent 1. Provide a table of the count of plans under each plan type in each year.<br>
 
-See @tbl-plans. 
+See @tbl-plans.
 
 ```{r} 
 #| echo: false 
-#| label: tbl_plans 
+#| label: tbl-plans 
 #| tbl_cap: All Plan Types (2015) 
 
 options(knitr_kable_NA=0)
