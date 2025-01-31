@@ -19,8 +19,7 @@ final_plans <- full_ma_data %>%
 
 plan_type_year2 <- final_plans %>% group_by(plan_type) %>% count() %>% arrange(-n)
 
-plan_type_enroll <- final_plans %>% group_by(plan_type) %>% summarize(n=n(), 
-                    enrollment=mean(enrollment, na_rm=TRUE)) %>% arrange(-n)
+plan_type_enroll <- final_plans %>% group_by(plan_type) %>% summarize(n=n(), enrollment=mean(enrollment, na.rm=TRUE)) %>% arrange(-n)
 
 final_data <- final_plans %>% 
     inner_join(contract_service_area %>% 
