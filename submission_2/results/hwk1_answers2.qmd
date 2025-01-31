@@ -44,8 +44,8 @@ See @tbl-plans.
 options(knitr_kable_NA=0)
 knitr::kable(plan_type_year1, 
             col_names=c("Plan Type", "Count"), 
-            format_args=list(big_mark=","), 
-            booktabs = TRUE)
+            format_args=list(big_mark=","), booktabs = TRUE, 
+            caption = "All Plan Types (2015)")
 ```
 
 \newpage 
