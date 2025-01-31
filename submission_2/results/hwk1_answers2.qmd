@@ -1,10 +1,10 @@
---- 
-title: "Homework 1" 
-subtitle: "Econ 470, Spring 2025" 
+---
+title: "Homework 1"
+subtitle: "ECON 470, Spring 2025"
 author: "Molly Catlin"
 format:
   pdf:
-  output-file: "catlin_molly_hwk1_2"
+    output-file: "catlin_molly_hwk1_2"
     output-ext:  "pdf"
     header-includes:
       - \usepackage{float}
