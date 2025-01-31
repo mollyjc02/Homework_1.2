@@ -33,50 +33,31 @@ contract_info <- contract_info %>%
   select(-id_count)
 
 # Read enrollment information for 2015
-enroll_info <- read_csv(
-  enrollment_path,
-  skip = 1,
-  col_names = c("contractid", "planid", "ssa",
-                "fips", "state", "county", "enrollment"),
-  col_types = cols(
-    contractid = col_character(),
-    planid = col_double(),
-    ssa = col_double(),
-    fips = col_double(),
-    state = col_character(),
-    county = col_character(),
-    enrollment = col_double()
-  ),
-  na = "*"
-)
+enroll_info <- read_csv(enrollment_path,
+                        skip = 1,
+                        col_names = c("contractid", "planid", "ssa",
+                                      "fips", "state", "county", "enrollment"),
+                        col_types = cols(
+                          contractid = col_character(),
+                          planid = col_double(),
+                           ssa = col_double(), 
+                           fips = col_double(),
+                           state = col_character(),
+                           county = col_character(),
+                           enrollment = col_double()
+                          ),
+                        na = "*")
 
 # Merge contract info with enrollment info
 plan_data <- contract_info %>%
   left_join(enroll_info, by = c("contractid", "planid")) %>%
-  mutate(year = 2015)
-
-# Fill missing fips codes by state and county
-plan_data <- plan_data %>%
+  mutate(year=2015) %>%
   group_by(state, county) %>%
-  fill(fips)
-
-# Fill missing plan characteristics by contract and plan ID
-plan_data <- plan_data %>%
+  fill(fips)%>%
   group_by(contractid, planid) %>%
-  fill(plan_type, partd, snp, eghp, plan_name)
-
-# Fill missing contract characteristics by contract ID
-plan_data <- plan_data %>%
+  fill(plan_type, partd, snp, eghp, plan_name) %>%
   group_by(contractid) %>%
   fill(org_type, org_name, org_marketing_name, parent_org)
 
-# Collapse from monthly data to yearly
-plan_year <- plan_data %>%
-  group_by(contractid, planid, fips) %>%
-  arrange(contractid, planid, fips) %>%
-  rename(avg_enrollment = enrollment)
-
 # Save processed data for 2015
-write_rds(plan_year, "data/output/ma_data_2015.rds")
-
-glimpse(plan_year)
+write_rds(plan_data, "data/output/plan_data2.rds")
