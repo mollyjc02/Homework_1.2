@@ -11,6 +11,7 @@ format:
       - \floatplacement{table}{H}
 ---
 
+
 ```{r}
 #| include: false
 
@@ -28,6 +29,9 @@ pacman::p_load(tidyverse, ggplot2, dplyr, lubridate, readr, readxl, hrbrthemes, 
 getwd()
 load("C:/Users/Molly/OneDrive - Emory University/Documents/GitHub/Homework_1.2/submission_2/results/hwk1_workspace.Rdata") 
 ```
+
+My answers to the homework questions are described below. The GitHub repository for this work is available [here](https://github.com/mollyjc02/Homework_1.2.git). Enjoy!
+
 
 \newpage 
 # Building the Data 
